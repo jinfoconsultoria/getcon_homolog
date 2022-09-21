@@ -1,0 +1,305 @@
+<!-- ! Estrutura base -->
+
+<ul class="nav nav-tabs nav-tabs-main" id="abas" role="tablist">
+	<li class="nav-item" role="presentation">
+		<a class="nav-link active" id="cadastro-tab" data-toggle="tab" href="#cadastro" role="tab" aria-controls="cadastro" aria-selected="true">Cadastrar</a>
+	</li>
+	<li class="nav-item" role="presentation">
+		<a class="nav-link" id="busca-tab" data-toggle="tab" href="#busca" role="tab" aria-controls="busca" aria-selected="false">Procurar</a>
+	</li>
+</ul>
+
+<div class="tab-content" id="abasConteudo">
+	<div class="tab-pane fade show active" id="cadastro" role="tabpanel" aria-labelledby="cadastro-tab">
+		<div class="card" width="50%">
+			<div class="card-body">
+				<h4 class="card-title">Informações do AAAAAA</h4>
+				<h6 class="card-subtitle">Aqui você irá definir as informações sobre o AAAAAA.</h6>
+
+				<div class="form-group">
+					<label for="nome-cadastro">Nome</label>
+					<input class="form-control" type="text" id="nome-cadastro" />
+				</div>
+
+				<button class="btn btn-primary">Cadastrar</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="tab-pane fade" id="busca" role="tabpanel" aria-labelledby="busca-tab">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">Faça uma busca</h4>
+				<h5 class="card-subtitle">Aqui você pode fazer uma busca pelos ambientes cadastrados e realizar edições.</h5>
+
+				<div class="form-group">
+					<label for="nome-busca">Nome</label>
+					<input class="form-control" type="text" id="nome-busca" />
+				</div>
+
+				<button class="btn btn-primary">Procurar</button>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">Resultado</h4>
+				<div class="relatorios">
+					<i class="fad fa-file-pdf gerar-pdf"></i>
+					<i class="fad fa-file-excel gerar-xls"></i>
+				</div>
+
+				<div id="busca-resultado">
+					<h5 class="card-subtitle" style="text-align: center;">Aqui aparecerão todos os resultados da busca.</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="../assets/js/uploader.js"></script>
+
+<script>
+	CKEDITOR.replaceAll('ckeditor');
+</script>
+
+<!-- ! Fim da estrutura base -->
+
+<!-- Bloco -->
+<div class="form-group">
+	<label for="bloco-busca">Bloco</label>
+	<select disabled class="custom-select form-control" id="bloco-busca">
+		<option selected="">Não existem blocos cadastrados.</option>
+	</select>
+</div>
+
+<!-- Apartamento -->
+<div class="form-group">
+	<label for="apto-busca">Apartamento</label>
+	<select disabled class="custom-select form-control" id="apto-busca">
+		<option selected="">Não existem apartamentos cadastrados.</option>
+	</select>
+</div>
+
+<!-- Card -->
+<div class="card">
+	<div class="card-body">
+		<h4 class="card-title">Esse é o title</h4>
+		<h6 class="card-subtitle">Esse é o subtitle</h6>
+
+		<div></div>
+	</div>
+</div>
+
+<!-- ? ********** Input ********** -->
+
+<!-- Ckeditor -->
+<div class="form-group">
+	<label for="observacao-cadastro">Observação</label>
+	<textarea id="observacao-cadastro" class="form-control ckeditor" rows="3"></textarea>
+</div>
+
+<!-- Morador, apartamento e bloco -->
+<div class="row">
+	<div class="col-md-4">
+		<div class="form-group">
+			<label for="bloco-observacao">Bloco</label>
+			<select disabled class="custom-select form-control" id="bloco-observacao">
+				<option selected>Não existem blocos cadastrados.</option>
+			</select>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label for="apto-observacao">Apartamento</label>
+			<select disabled class="custom-select form-control" id="apto-observacao">
+				<option selected>Não existem apartamentos cadastrados.</option>
+			</select>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+			<label for="morador-observacao">Morador</label>
+			<select disabled class="custom-select form-control" id="morador-observacao">
+				<option selected>Selecione o bloco e o apartamento.</option>
+			</select>
+		</div>
+	</div>
+</div>
+
+<!-- Select -->
+<div class="form-group">
+	<label for="id_do_radio">Radio</label>
+	<select class="custom-select form-control" id="id_do_radio">
+		<option>Radio_1</option>
+		<option>Radio_2</option>
+		<option>Radio_3</option>
+		<option>Radio_4</option>
+		<option>Radio_5</option>
+	</select>
+</div>
+
+<!-- Radio -->
+<div class="form-group">
+	<label for="painel-cadastro">Liberar o painel?</label>
+
+	<input type="radio" name="painel-cadastro" id="sim_painel-cadastro" class="multipla" />
+	<label for="sim_painel-cadastro" class="multipla btn-outline-secondary">Sim</label>
+
+	<input type="radio" name="painel-cadastro" id="nao_painel-cadastro" class="multipla" />
+	<label for="nao_painel-cadastro" class="multipla btn-outline-secondary">Não</label>
+</div>
+
+<!-- Imagem -->
+<div class="form-group">
+	<label for="imagem-cadastro">Imagem</label>
+	<div>
+		<div class="input-group">
+			<div class="custom-file">
+				<input type="file" class="custom-file-input" id="imagem-cadastro" />
+				<label class="custom-file-label" for="imagem-cadastro"></label>
+				<i class="preview-file far fa-eye d-none"></i>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Arquivo -->
+<div class="form-group">
+	<label for="arquivo-cadastro">Arquivo</label>
+	<div class="input-group">
+		<div class="custom-file">
+			<input type="file" class="custom-file-input" id="arquivo-cadastro" />
+			<label class="custom-file-label" for="arquivo-cadastro">Nenhum arquivo selecionado.</label>
+		</div>
+	</div>
+</div>
+
+<!-- Data -->
+<div class="form-group">
+	<label for="data-busca">Data</label>
+	<input class="form-control" type="date" id="data-busca" />
+</div>
+
+<!-- Intervalo de datas -->
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label for="data_inicial-busca">Data inicial</label>
+			<input class="form-control" type="date" id="data_inicial-busca" />
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="form-group">
+			<label for="data_final-busca">Data final</label>
+			<input class="form-control" type="date" id="data_final-busca" />
+		</div>
+	</div>
+</div>
+
+<!-- Icone input -->
+<div class="form-group">
+	<label for="valor-configuracao">Valor da hora</label>
+	<div class="input-group">
+		<div class="input-group-prepend">
+			<span class="input-group-text">R$</span>
+		</div>
+		<input value="10" class="form-control" type="text" id="valor-configuracao" />
+	</div>
+</div>
+
+<!-- ? ********** Endereço ********** -->
+
+<!-- Rua -->
+<div class="form-group">
+	<label for="rua-cadastro">Rua</label>
+	<input class="form-control" type="text" id="rua-cadastro" />
+</div>
+
+<!-- Número -->
+<div class="form-group">
+	<label for="numero-cadastro">Número</label>
+	<input class="form-control" type="text" id="numero-cadastro" />
+</div>
+
+<!-- CEP -->
+<div class="form-group">
+	<label for="cep-cadastro">CEP</label>
+	<input class="form-control" type="text" id="cep-cadastro" />
+</div>
+
+<!-- logradouro -->
+<div class="form-group">
+	<label for="tipo_logradouro-cadastro">Tipo do logradouro</label>
+	<select class="custom-select form-control" name="tipo_logradouro-cadastro" id="tipo_logradouro-cadastro">
+		<option>Selecione</option>
+		<option value="Aeroporto">Aeroporto</option>
+		<option value="Alameda">Alameda</option>
+		<option value="Área">Área</option>
+		<option value="Avenida">Avenida</option>
+		<option value="Campo">Campo</option>
+		<option value="Chácara">Chácara</option>
+		<option value="Colônia">Colônia</option>
+		<option value="Condomínio">Condomínio</option>
+		<option value="Conjunto">Conjunto</option>
+		<option value="Distrito">Distrito</option>
+		<option value="Esplanada">Esplanada</option>
+		<option value="Estação">Estação</option>
+		<option value="Estrada">Estrada</option>
+		<option value="Favela">Favela</option>
+		<option value="Fazenda">Fazenda</option>
+		<option value="Feira">Feira</option>
+		<option value="Jardim">Jardim</option>
+		<option value="Ladeira">Ladeira</option>
+		<option value="Lago">Lago</option>
+		<option value="Lagoa">Lagoa</option>
+		<option value="Largo">Largo</option>
+		<option value="Loteamento">Loteamento</option>
+		<option value="Morro">Morro</option>
+		<option value="Núcleo">Núcleo</option>
+		<option value="Parque">Parque</option>
+		<option value="Passarela">Passarela</option>
+		<option value="Pátio">Pátio</option>
+		<option value="Praça">Praça</option>
+		<option value="Quadra">Quadra</option>
+		<option value="Recanto">Recanto</option>
+		<option value="Residencial">Residencial</option>
+		<option value="Rodovia">Rodovia</option>
+		<option value="Rua">Rua</option>
+		<option value="Setor">Setor</option>
+		<option value="Sítio">Sítio</option>
+		<option value="Travessa">Travessa</option>
+		<option value="Trecho">Trecho</option>
+		<option value="Trevo">Trevo</option>
+		<option value="Vale">Vale</option>
+		<option value="Vereda">Vereda</option>
+		<option value="Via">Via</option>
+		<option value="Viaduto">Viaduto</option>
+		<option value="Viela">Viela</option>
+		<option value="Vila">Vila</option>
+	</select>
+</div>
+
+<!-- Bairro -->
+<div class="form-group">
+	<label for="bairro-cadastro">Bairro</label>
+	<input class="form-control" type="text" id="bairro-cadastro" />
+</div>
+
+<!-- Cidade -->
+<div class="form-group">
+	<label for="cidade-cadastro">Cidade</label>
+	<input class="form-control" type="text" id="cidade-cadastro" />
+</div>
+
+<!-- Estado -->
+<div class="form-group">
+	<label for="estado-cadastro">Estado</label>
+	<input class="form-control" type="text" id="estado-cadastro" />
+</div>
+
+<!-- Observação -->
+<div class="form-group">
+	<label for="observacao-cadastro">Observação</label>
+	<textarea id="observacao-cadastro" rows="5" class="form-control ckeditor"></textarea>
+</div>

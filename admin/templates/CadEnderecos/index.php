@@ -4,6 +4,58 @@
  * @var \App\Model\Entity\CadEndereco[]|\Cake\Collection\CollectionInterface $cadEnderecos
  */
 ?>
+<style>
+.h3, h3 {
+    font-size: 23px;
+    margin-left: -33px;
+    margin-top: 0px;
+}
+
+.content{
+	padding-left: 0;
+}
+
+h4.card-title {
+    font-size: 2.125rem;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.card-subtitle {
+    margin-bottom: 10px;
+    font-weight: 300;
+    color: #a1aab2;
+    margin-top: -1.375rem;
+    font-size: 1.65rem;
+}
+label {
+    font-weight: 300;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    color: #1e88e5;
+    border-bottom: 2px solid;
+    border: none;
+    font-size: 18px;
+}
+.nav-tabs{
+    background-color: #fff;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #888;
+}
+.nav>li>a {
+    color: #888;
+}
+
+.page-titles {
+        padding: 29px 30px;
+        margin-bottom: -5px;
+}
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+    border: 1px solid #d4d4d463;
+}
+</style>
 <html lang="pt-br">
 
     <head>
@@ -30,6 +82,11 @@
         <link rel="stylesheet" href="../assets/css/estilo.css" />
     </head> 
     <body>
+        <div class="page-titles">
+                <div class="row" style="margin-left: 15px">
+                    <h3 id="secao-titulo" class="text-themecolor margin-left: 11px;">Endereços</h3>
+                </div>
+        </div>
         <div class="row cadEnderecos index content">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
@@ -43,12 +100,8 @@
                 </li>
             </ul>
             </div>
-            <div class="page-titles">
-                <div class="row" style="margin-left: 15px">
-                    <h3 id="secao-titulo" class="text-themecolor margin-left: 11px;">Endereços</h3>
-                </div>
-            </div>
-            <div class="tab-pane ml"  aria-labelledby="busca-tab" style="margin-left: 20px; margin-right: 20px;">
+
+            <div class="tab-pane ml"  aria-labelledby="busca-tab" style="margin-left: auto; margin-right: auto;">
                     <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Faça uma busca</h4>
@@ -79,7 +132,7 @@
                                 $('#morador-busca').load('/telas/master/listaMorador.php?bloco=' + $('#bloco-busca').val() + '&apartamento=' + $(this).val());
                             });
                         </script>
-                        <button type="submit" class="btn btn-loader btn-primary">
+                        <button type="submit" class="btn btn-primary btn-lg" style="width:90;height:10">
                             Pesquisar
                             <img class="img-loader" src="assets/img/loader_branco.svg">
                         </button>
@@ -89,7 +142,7 @@
             </div>
             </div>
             <div class="table-responsive mt-3">
-                <table class="table-bordered table-hover" style="margin-left: 20px; margin-right: 20px;">
+                <table class="table table-bordered tabela-resultado table-hover mt-4" style="margin-left: 20px; margin-right: 20px; background-color: #fff;">
                     <thead class="bg-inverse text-white">
                         <tr>
                             <th><?= $this->Paginator->sort('#') ?></th>
@@ -103,7 +156,7 @@
                             <th><?= $this->Paginator->sort('Data Cadastro') ?></th>
                             <th><?= $this->Paginator->sort('Data Modificação') ?></th>
                             <th><?= $this->Paginator->sort('status') ?></th>
-                            <th class="actions"><?= __('Ações') ?></th>
+                            <th class="actions" style="color: #fff;"><?= __('Ações') ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -120,7 +173,7 @@
                             <td><?= h($cadEndereco->created) ?></td>
                             <td><?= h($cadEndereco->modified) ?></td>
                             <td><?= $cadEndereco->status === null ? '' : $this->Number->format($cadEndereco->status) ?></td>
-                            <td class="actions">
+                            <td class="actions" style="color: #67757c;">
                                 <?= $this->Html->link(__('Ver'), ['action' => 'view', $cadEndereco->id]) ?>
                                 <?= $this->Html->link(__('Editar'), ['action' => 'edit', $cadEndereco->id]) ?>
                                 <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $cadEndereco->id], ['confirm' => __('Você tem certeza que quer deletar # {0}?', $cadEndereco->id)]) ?>
@@ -130,7 +183,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="paginator style="margin-left: 20px; margin-right: 20px;">
+            <div class="paginator" style="margin-left: 20px; margin-right: 20px; background-color: #fff;">
                 <ul class="pagination">
                     <?= $this->Paginator->first('<< ' . __('Primeira')) ?>
                     <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
